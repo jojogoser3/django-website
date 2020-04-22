@@ -7,7 +7,7 @@ from django.contrib import messages
 from .forms import NewUserForm
 
 def single_slug(request, single_slug):
-    # first check to see if the url is in categories.
+    
 
     categories = [c.category_slug for c in TutorialCategory.objects.all()]
     if single_slug in categories:
@@ -37,7 +37,7 @@ def single_slug(request, single_slug):
     
     return HttpResponse(f"{single_slug} does not correspond to anything")
 
-# Create your views here.
+
 def homepage(request):
     return render(request=request,
                   template_name='main/categories.html',
